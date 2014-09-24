@@ -8,8 +8,6 @@
 
 #include "cprocessing.hpp"
 
-#include "PerlinNoise.h"
-
 USING_NS_CC;
 
 using namespace cprocessing;
@@ -150,59 +148,61 @@ void HelloWorld::onDraw(const Mat4 &transform, uint32_t flags)
 {
     auto origin =  Director::getInstance()->getVisibleOrigin();
     
-    
-    nvgBeginFrame(vg, width, height, 2);
+    nvgBeginFrame(vg, width, height, 1);
     
     nvgBeginPath(vg);
     
     // draw background
-    nvgRect(vg, 0,0, width,height);
-    nvgFillColor(vg, nvgRGBA(255,255,255,255));
-    nvgFill(vg);
-    
-    nvgStrokeColor(vg, nvgRGBA(0,0,0,50));
-    for (int i=0; i<nbPts-1; i++) {
-        for (int j=i+1; j<nbPts; j++) {
-            if (dist(x[i], y[i], x[j], y[j])<RADIUS+10) {
-                nvgBeginPath(vg);
-                nvgMoveTo(vg, x[i], y[i]);
-                nvgLineTo(vg, x[j], y[j]);
-                nvgStroke(vg);
-                nbConnex[i]++;
-                nbConnex[j]++;
-            }
-        }
-    }
-
-    for (int i=0; i<nbPts; i++) {
-        angle[i] += speed[i];
-        x[i] = ease(x[i], width/2 + cos(angle[i]) * rad[i], 0.1);
-        y[i] = ease(y[i], height/2 + sin(angle[i]) * rad[i], 0.1);
-        diam[i] = ease(diam[i], min(nbConnex[i], 7)*max(0.5,(rad[i]/RADIUS/5.0)), 0.1);
-        
-        nvgBeginPath(vg);
-        nvgFillColor(vg, nvgRGBA(0,0,0,100));
-        nvgEllipse(vg, x[i], y[i], diam[i] + 3, diam[i] + 3);
-        nvgFill(vg);
-        
-        nvgBeginPath(vg);
-        nvgFillColor(vg, nvgRGBA(0,0,0,255));
-        nvgEllipse(vg, x[i], y[i], diam[i], diam[i]);
-        nvgFill(vg);
-        
-        nbConnex[i] = 0;
-    }
+     nvgRect(vg, 0,0, width,height);
+     nvgFillColor(vg, nvgRGBA(255,255,255,255));
+     nvgFill(vg);
+     
+     nvgStrokeColor(vg, nvgRGBA(0,0,0,50));
+     for (int i=0; i<nbPts-1; i++) {
+         for (int j=i+1; j<nbPts; j++) {
+             if (dist(x[i], y[i], x[j], y[j])<RADIUS+10) {
+                 nvgBeginPath(vg);
+                 nvgMoveTo(vg, x[i], y[i]);
+                 nvgLineTo(vg, x[j], y[j]);
+                 nvgStroke(vg);
+                 nbConnex[i]++;
+                 nbConnex[j]++;
+             }
+         }
+     }
+ 
+     for (int i=0; i<nbPts; i++) {
+         angle[i] += speed[i];
+         x[i] = ease(x[i], width/2 + cos(angle[i]) * rad[i], 0.1);
+         y[i] = ease(y[i], height/2 + sin(angle[i]) * rad[i], 0.1);
+         diam[i] = ease(diam[i], min(nbConnex[i], 7)*max(0.5,(rad[i]/RADIUS/5.0)), 0.1);
+         
+         nvgBeginPath(vg);
+         nvgFillColor(vg, nvgRGBA(0,0,0,100));
+         nvgEllipse(vg, x[i], y[i], diam[i] + 3, diam[i] + 3);
+         nvgFill(vg);
+         
+         nvgBeginPath(vg);
+         nvgFillColor(vg, nvgRGBA(0,0,0,255));
+         nvgEllipse(vg, x[i], y[i], diam[i], diam[i]);
+         nvgFill(vg);
+         
+         nbConnex[i] = 0;
+     }
     
     nvgBeginPath(vg);
     nvgMoveTo(vg, 0,0);
-    nvgLineTo(vg, width,height-100);
-    nvgStrokeWidth(vg, 1);
+    nvgLineTo(vg, 100, 40);
+    nvgStrokeColor(vg, nvgRGB(255,255,255));
+    nvgStrokeWidth(vg, 3);
     nvgStroke(vg);
     
     nvgEndFrame(vg);
     
     GL::bindTexture2D(0);
     GL::enableVertexAttribs(GL::VERTEX_ATTRIB_FLAG_NONE);
+
+    GL::useProgram(0);
 }
 
 void HelloWorld::update(float dt)
