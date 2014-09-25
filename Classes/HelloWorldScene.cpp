@@ -2,7 +2,13 @@
 #include "AppMacros.h"
 
 #include "nanovg.h"
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#define NANOVG_GLES2_IMPLEMENTATION
+#else
 #define NANOVG_GL2_IMPLEMENTATION
+#endif
+
 #include "nanovg_gl.h"
 #include "nanovg_gl_utils.h"
 
@@ -118,8 +124,11 @@ bool HelloWorld::init()
 
     Director::getInstance()->setDisplayStats(true);
     
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID) || (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    vg = nvgCreateGLES2(NVG_ANTIALIAS | NVG_STENCIL_STROKES | NVG_DEBUG);
+#else
     vg = nvgCreateGL2(NVG_ANTIALIAS | NVG_STENCIL_STROKES | NVG_DEBUG);
-    
+#endif
     initialize();
     
     this->scheduleUpdate();

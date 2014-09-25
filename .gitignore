@@ -4,3 +4,17 @@ Debug.win32
 /proj.win32/nanovg-test.opensdf
 /proj.win32/nanovg-test.sdf
 /proj.win32/nanovg-test.v11.suo
+proj.android/obj
+proj.android/bin
+proj.android/assets
+proj.android/libs/armeabi/gdb.setup
+proj.android/libs/armeabi/gdbserver
+proj.android/libs/armeabi/libcocos2dcpp.so
+proj.android/gen/R.java.d
+proj.android/gen/org/cocos2dx/nanovg-test/BuildConfig.java
+proj.android/gen/org/cocos2dx/nanovg-test/R.java
+local.properties
+proj.android/proguard-project.txt
+proj.android/project.properties
+proj.ios_mac/nanovg-test.xcodeproj/project.xcworkspace/xcuserdata/youyou.xcuserdatad/UserInterfaceState.xcuserstate
+proj.ios_mac/nanovg-test.xcodeproj/xcuserdata/youyou.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
