@@ -26,8 +26,6 @@
 		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		4D46398719D077930082D13A /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D46398319D077930082D13A /* nanovg.c */; };
 		4D46398819D077930082D13A /* nanovg.c in Sources */ = {isa = PBXBuildFile; fileRef = 4D46398319D077930082D13A /* nanovg.c */; };
-		4D46398B19D0789C0082D13A /* PerlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D46398919D0789C0082D13A /* PerlinNoise.cpp */; };
-		4D46398C19D0789C0082D13A /* PerlinNoise.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D46398919D0789C0082D13A /* PerlinNoise.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -123,8 +121,6 @@
 		4D46398419D077930082D13A /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg.h; sourceTree = "<group>"; };
 		4D46398519D077930082D13A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		4D46398619D077930082D13A /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
-		4D46398919D0789C0082D13A /* PerlinNoise.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PerlinNoise.cpp; sourceTree = "<group>"; };
-		4D46398A19D0789C0082D13A /* PerlinNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoise.h; sourceTree = "<group>"; };
 		4D46398F19D084550082D13A /* cprocessing.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cprocessing.hpp; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -301,8 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				4D46398F19D084550082D13A /* cprocessing.hpp */,
-				4D46398919D0789C0082D13A /* PerlinNoise.cpp */,
-				4D46398A19D0789C0082D13A /* PerlinNoise.h */,
 				4D46397E19D077920082D13A /* AppMacros.h */,
 				4D46398019D077930082D13A /* fontstash.h */,
 				4D46398119D077930082D13A /* nanovg_gl_utils.h */,
@@ -510,7 +504,6 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				4D46398719D077930082D13A /* nanovg.c in Sources */,
-				4D46398B19D0789C0082D13A /* PerlinNoise.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -524,7 +517,6 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				4D46398819D077930082D13A /* nanovg.c in Sources */,
-				4D46398C19D0789C0082D13A /* PerlinNoise.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
